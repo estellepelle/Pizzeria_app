@@ -2,8 +2,8 @@ package fr.pizzeria.ihm;
 
 import java.util.Scanner;
 
-import fr.pizzeria.dao.IPizzaDao;
-import fr.pizzeria.dao.PizzaDaoImpl;
+import fr.pizzeria.dao.pizza.IPizzaDao;
+import fr.pizzeria.dao.pizza.PizzaDaoImpl;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
@@ -22,7 +22,7 @@ public class NouvellePizzaOptionMenu extends OptionMenu {
 	public boolean execute() {
 		System.out.println("Veuillez saisir un code:");
 		String code = question.next();
-		System.out.println("Veuillez saisir un libellé:");
+		System.out.println("Veuillez saisir un libellï¿½:");
 		String libelle = question.next();
 		System.out.println("Veuillez saisir un prix:");
 		double prix = question.nextDouble();

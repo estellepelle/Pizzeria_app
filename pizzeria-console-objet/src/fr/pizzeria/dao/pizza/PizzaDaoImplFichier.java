@@ -1,4 +1,4 @@
-package fr.pizzeria.dao;
+package fr.pizzeria.dao.pizza;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -57,7 +57,9 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 
 	@Override
 	public boolean saveNewPizza(Pizza pizza) {
-		// TODO Auto-generated method stub
+		
+		//creation nouveau fichier
+		
 		return false;
 	}
 

@@ -1,7 +1,7 @@
 package fr.pizzeria.ihm;
 
-import fr.pizzeria.dao.IPizzaDao;
-import fr.pizzeria.dao.PizzaDaoImpl;
+import fr.pizzeria.dao.pizza.IPizzaDao;
+import fr.pizzeria.dao.pizza.PizzaDaoImpl;
 import fr.pizzeria.model.Pizza;
 import java.util.Scanner;
 

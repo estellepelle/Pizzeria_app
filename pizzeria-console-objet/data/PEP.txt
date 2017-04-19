@@ -1,1 +1,1 @@
-1;Pépéroni;12.50;VIANDE
+1;Peperoni;12.50;VIANDE
