@@ -18,6 +18,7 @@ public class Menu {
 	public Menu(Scanner questions,IPizzaDao laPizzaDao){
 		
 		
+		
 		this.listPizza = new ListerPizzaOptionMenu(laPizzaDao);
 		this.newPizza = new NouvellePizzaOptionMenu(question,laPizzaDao) ;
 		this.modifPizza = new ModifierPizzaOptionMenu(question,laPizzaDao);
@@ -29,7 +30,7 @@ public class Menu {
 	
 	public void afficher(){
 		
-			
+		
 		System.out.println(listPizza.getLibelle());
 		System.out.println(newPizza.getLibelle());
 		System.out.println(modifPizza.getLibelle());
