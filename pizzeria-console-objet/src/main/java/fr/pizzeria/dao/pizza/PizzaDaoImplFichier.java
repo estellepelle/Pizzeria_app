@@ -1,5 +1,6 @@
 package fr.pizzeria.dao.pizza;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.exception.StockageException;
@@ -17,6 +19,7 @@ import fr.pizzeria.model.Pizza;
 public class PizzaDaoImplFichier implements IPizzaDao {
 
 	private String dataDir;
+	private Path p = Paths.get("C:/Users/ETY/Pizzeria_app/pizzeria-console-objet/data/");
 	
 	public PizzaDaoImplFichier(String dataDir){
 		super();
@@ -24,16 +27,19 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 	}
 	
 	
+	
 	@Override
 	public List<Pizza> findAllPizzas() {
 		
-		try {
-			return Files.list(Paths.get(dataDir)).map(path -> {
+		try (Stream<Path> list = Files.list(Paths.get(dataDir));){
+		
+			return list.map(path -> {
 				String code = path.toFile().getName().replaceAll(".txt","");
 				
-				try{
+				try(Stream<String> lines = Files.lines(path);){
 					
-					String[] valueTab = Files.lines(path)
+					
+					String[] valueTab = lines
 							                 .findFirst()
 							                 .orElseThrow(() -> new StockageException("fichier vide"))
 							                 .split(";");
@@ -58,21 +64,49 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 	@Override
 	public boolean saveNewPizza(Pizza pizza) {
 		
-		//creation nouveau fichier
+		
+		//creation nouveau fichier avec l'ecriture
+		String phrase = pizza.getId() +";" + pizza.getNom() +";"+ pizza.getPrix() +";"+ pizza.getType();
+		byte data[] = phrase.getBytes();
+		String chemin = p.toFile().getAbsolutePath() +"/" + pizza.getCode() +".txt";
+		Path cheminValide = Paths.get(chemin);
+		  
+		
+		try {
+				
+			//Ajouter du texte
+			Files.write(cheminValide, data);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return true;
+	}
+
+	@Override
+	public boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException {
+		
+		deletePizza(codePizza);
+		saveNewPizza(pizza);
 		
 		return false;
 	}
 
 	@Override
-	public boolean updatePizza(String codePizza, Pizza pizza) throws UpdatePizzaException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public boolean deletePizza(String codePizza) throws DeletePizzaException {
-		// TODO Auto-generated method stub
-		return false;
+		Path cheminBon = Paths.get("C:/Users/ETY/Pizzeria_app/pizzeria-console-objet/data/" +codePizza + ".txt");
+		
+		try {
+			Files.delete(cheminBon);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
+		
+		
 	}
 	
 	/*recupere le code

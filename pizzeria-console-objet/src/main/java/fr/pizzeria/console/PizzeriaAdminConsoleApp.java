@@ -3,9 +3,13 @@ package fr.pizzeria.console;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+
+import com.github.lalyos.jfiglet.FigletFont;
 
 import fr.pizzeria.dao.DaoFactory;
 import fr.pizzeria.dao.DaoFichierFactory;
@@ -16,7 +20,7 @@ import fr.pizzeria.ihm.*;
 
 public class PizzeriaAdminConsoleApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		Scanner question = new Scanner(System.in);
 		List<Pizza> pizzas = new ArrayList<Pizza>();
@@ -30,7 +34,12 @@ public class PizzeriaAdminConsoleApp {
 		//DaoFactory  daoMemoire = new DaoMemoireFactory(pizzas);
 		
 		
-		
+		String asciiArt;
+	
+			asciiArt = FigletFont.convertOneLine("Pizzeria-app");
+			System.out.println(asciiArt);
+	
+	    
 		
 		Menu unMenu = new Menu(question, daoFactory.getPizzaDao());
 		
