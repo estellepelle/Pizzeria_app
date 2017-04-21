@@ -15,7 +15,7 @@
 	
 	<build>
 
-		<finalName>pizzeria_app_compile_${project.version}</finalName>
+		
 	</build>
 
 	

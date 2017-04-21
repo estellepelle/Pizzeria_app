@@ -27,42 +27,52 @@
           			</execution>
         		</executions>
 			</plugin>
+			
+			<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<mainClass>fr.pizzeria.console.PizzeriaAdminConsoleApp</mainClass>
+							</manifest>
+
+						</archive>
+					</configuration>
+				</plugin>
 		</plugins>
 		<finalName>pizzeria_app_compile_${project.version}</finalName>
 	</build>
 
 	
+	
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>Pizzeria-domain</groupId>
-			<artifactId>Pizzeria-domain</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>Pizzeria-dao-api</groupId>
-			<artifactId>Pizzeria-dao-api</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>Pizzeria-fichier</groupId>
-			<artifactId>Pizzeria-fichier</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>Pizzeria-memoire</groupId>
-			<artifactId>Pizzeria-memoire</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.lalyos</groupId>
-			<artifactId>jfiglet</artifactId>
-			<version>0.0.3</version>
-		</dependency>
-	</dependencies>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-domain</groupId>
+				<artifactId>Pizzeria-domain</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-dao-api</groupId>
+				<artifactId>Pizzeria-dao-api</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-fichier</groupId>
+				<artifactId>Pizzeria-fichier</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-memoire</groupId>
+				<artifactId>Pizzeria-memoire</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.github.lalyos</groupId>
+				<artifactId>jfiglet</artifactId>
+				<version>0.0.3</version>
+			</dependency>
+		</dependencies>
 	
 </project>

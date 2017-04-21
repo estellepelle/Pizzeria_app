@@ -13,11 +13,7 @@
 	<artifactId>Pizzeria-memoire</artifactId>
 	<version>1.0.1</version>
 	
-	<build>
-
-		
-		<finalName>pizzeria_app_compile_${project.version}</finalName>
-	</build>
+	
 
 
 	<dependencies>

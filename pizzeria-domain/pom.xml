@@ -12,12 +12,6 @@
 	<groupId>Pizzeria-domain</groupId>
 	<artifactId>Pizzeria-domain</artifactId>
 	
-	<build>
-
-		
-		<finalName>pizzeria_app_compile_${project.version}</finalName>
-	</build>
-
 	
 	
 	

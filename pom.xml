@@ -26,32 +26,14 @@
 						<target>${java.version}</target>
 					</configuration>
 				</plugin>
-
-				<plugin>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.0.2</version>
-					<configuration>
-						<archive>
-							<manifest>
-								<mainClass>fr.pizzeria.console.PizzeriaAdminConsoleApp</mainClass>
-							</manifest>
-
-						</archive>
-					</configuration>
-				</plugin>
-
-
-
 			</plugins>
 		</pluginManagement>
-
-		
-		<finalName>pizzeria_app_compile_${project.version}</finalName>
 	</build>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<junit.version>4.12</junit.version>
+		<jfiglet.version>0.0.3</jfiglet.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -59,15 +41,35 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>com.github.lalyos</groupId>
+				<artifactId>jfiglet</artifactId>
+				<version>${jfliget.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
-				<groupId>com.github.lalyos</groupId>
-				<artifactId>jfiglet</artifactId>
-				<version>0.0.3</version>
+				<groupId>Pizzeria-domain</groupId>
+				<artifactId>Pizzeria-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-dao-api</groupId>
+				<artifactId>Pizzeria-dao-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-fichier</groupId>
+				<artifactId>Pizzeria-fichier</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-memoire</groupId>
+				<artifactId>Pizzeria-memoire</artifactId>
+				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

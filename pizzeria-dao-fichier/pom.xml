@@ -14,13 +14,7 @@
 	<artifactId>Pizzeria-fichier</artifactId>	
 
 	
-	<build>
-
-		
-		<finalName>pizzeria_app_compile_${project.version}</finalName>
-	</build>
-
-
+	
 
 	<dependencies>
 		 <dependency>
