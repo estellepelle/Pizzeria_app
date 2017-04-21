@@ -6,24 +6,11 @@
     <version>1.0.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Pizzeria-console</groupId>
-  <artifactId>Pizzeria-console</artifactId>
+  <groupId>Pizzeria-fichier</groupId>
+  <artifactId>Pizzeria-fichier</artifactId>
   <version>1.0.1</version>
   <build>
     <finalName>pizzeria_app_compile_${project.version}</finalName>
-    <plugins>
-      <plugin>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.0.0</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
   </build>
   <dependencies>
     <dependency>

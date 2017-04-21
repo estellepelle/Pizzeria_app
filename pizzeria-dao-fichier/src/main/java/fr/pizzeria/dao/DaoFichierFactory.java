@@ -1,7 +1,6 @@
 package fr.pizzeria.dao;
 
 import fr.pizzeria.dao.pizza.IPizzaDao;
-import fr.pizzeria.dao.pizza.PizzaDaoImpl;
 import fr.pizzeria.dao.pizza.PizzaDaoImplFichier;
 
 public class DaoFichierFactory implements DaoFactory {

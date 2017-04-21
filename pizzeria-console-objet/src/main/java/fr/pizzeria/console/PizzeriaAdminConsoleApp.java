@@ -30,7 +30,7 @@ public class PizzeriaAdminConsoleApp {
 		//daoFactoryFichier
 		DaoFactory  daoFactory = new DaoFichierFactory();
 		
-		//daoMemoireFichier
+		//daoMemoireFactory
 		//DaoFactory  daoMemoire = new DaoMemoireFactory(pizzas);
 		
 		
