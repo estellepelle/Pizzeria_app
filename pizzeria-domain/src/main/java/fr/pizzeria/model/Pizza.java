@@ -1,10 +1,8 @@
 package fr.pizzeria.model;
 
-import java.lang.reflect.Field;
-
 public class Pizza {
 
-	private int id;
+	
 	@ToString
 	private String code;
 	@ToString
@@ -14,13 +12,24 @@ public class Pizza {
 	@ToString
 	CategoriePizza type;
 
-	public Pizza(int id, String code, String nom, double prix, CategoriePizza type) {
-		this.id = id;
+	public Pizza( String code, String nom, double prix, CategoriePizza type) {
+		
 		this.code = code;
 		this.nom = nom;
 		this.prix = prix;
 		this.type = type;
 	}
+
+
+
+	public Pizza( String code, String nom, double prix) {
+		this.code = code;
+		this.nom = nom;
+		this.prix = prix;
+		
+	}
+
+
 
 	public String toString() {
 //		String pPizza="";
@@ -31,7 +40,7 @@ public class Pizza {
 //			}
 //		}
 
-		String pPizza = (this.id + " " + this.code + " " + this.nom + " " + this.prix + " " + this.type);
+		String pPizza = (this.code + " " + this.nom + " " + this.prix + " " + this.type);
 		return pPizza;
 
 	}
@@ -44,9 +53,7 @@ public class Pizza {
 		this.type = type;
 	}
 
-	public int getId() {
-		return id;
-	}
+	
 
 	public String getCode() {
 		return code;
@@ -60,9 +67,6 @@ public class Pizza {
 		return prix;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public void setCode(String code) {
 		this.code = code;

@@ -16,14 +16,14 @@ public class PizzaDaoImpl implements IPizzaDao{
 	
 	public PizzaDaoImpl(){
 		pizzas = new ArrayList<>();
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "PEP", "Peperoni", 12.50, CategoriePizza.VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "MAR", "Margherita", 14.00, CategoriePizza.SANS_VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "REI", "La Reine", 11.50, CategoriePizza.VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "FRO", "La 4 fromages", 12.00, CategoriePizza.SANS_VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "CAN", "La cannibale", 12.50, CategoriePizza.VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "ORI", "L'orientale", 13.50, CategoriePizza.VIANDE));
-		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "IND", "L'indienne", 14.00, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza("PEP", "Peperoni", 12.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza( "MAR", "Margherita", 14.00, CategoriePizza.SANS_VIANDE));
+		saveNewPizza(new Pizza("REI", "La Reine", 11.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza( "FRO", "La 4 fromages", 12.00, CategoriePizza.SANS_VIANDE));
+		saveNewPizza(new Pizza( "CAN", "La cannibale", 12.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza( "SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza("ORI", "L'orientale", 13.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza("IND", "L'indienne", 14.00, CategoriePizza.VIANDE));
 	}
 	
 	public PizzaDaoImpl(List<Pizza> pizzas){

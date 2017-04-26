@@ -1,9 +1,9 @@
 package fr.pizzeria.ihm;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import fr.pizzeria.dao.pizza.IPizzaDao;
-import fr.pizzeria.dao.pizza.PizzaDaoImpl;
 import fr.pizzeria.model.Pizza;
 
 public class ListerPizzaOptionMenu extends OptionMenu {
@@ -17,7 +17,7 @@ public class ListerPizzaOptionMenu extends OptionMenu {
 		this.libelle="1. Lister les pizzas";
 	}
 
-	public boolean execute() {
+	public boolean execute() throws SQLException, ClassNotFoundException {
 		
 		List<Pizza> pizzas = laPizzaDao.findAllPizzas();
 		

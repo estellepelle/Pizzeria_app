@@ -5,17 +5,18 @@
 	<groupId>dta</groupId>
 	<artifactId>Pizzeria-app-parent</artifactId>
 	<version>1.0.1</version>
-	
+
 	<packaging>pom</packaging>
-	
+
 	<modules>
-			<module>pizzeria-console-objet</module>
-			<module>pizzeria-dao-api</module>
-			<module>pizzeria-dao-fichier</module>
-			<module>pizzeria-dao-memoire</module>
-			<module>pizzeria-domain</module>
+		<module>pizzeria-console-objet</module>
+		<module>pizzeria-dao-api</module>
+		<module>pizzeria-dao-fichier</module>
+		<module>pizzeria-dao-memoire</module>
+		<module>pizzeria-domain</module>
+		<module>pizzeria-dao-jdbc</module>
 	</modules>
-	
+
 	<build>
 		<resources>
 			<resource>
@@ -23,7 +24,7 @@
 				<filtering>true</filtering>
 			</resource>
 		</resources>
-		
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -76,6 +77,11 @@
 			<dependency>
 				<groupId>Pizzeria-memoire</groupId>
 				<artifactId>Pizzeria-memoire</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-dao-jdbc</groupId>
+				<artifactId>Pizzeria-dao-jdbc</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>

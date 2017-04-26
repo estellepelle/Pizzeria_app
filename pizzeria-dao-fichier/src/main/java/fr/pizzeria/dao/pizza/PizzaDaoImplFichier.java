@@ -46,7 +46,7 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 					                         
 							
 					
-					return  new Pizza(Integer.valueOf(valueTab[0]),code, valueTab[1],Double.valueOf(valueTab[2]), CategoriePizza.valueOf(valueTab[3]));
+					return  new Pizza(code, valueTab[1],Double.valueOf(valueTab[2]), CategoriePizza.valueOf(valueTab[3]));
 				}
 				catch(IOException e){
 				   throw new StockageException(e);	
@@ -66,7 +66,7 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 		
 		
 		//creation nouveau fichier avec l'ecriture
-		String phrase = pizza.getId() +";" + pizza.getNom() +";"+ pizza.getPrix() +";"+ pizza.getType();
+		String phrase =pizza.getNom() +";"+ pizza.getPrix() +";"+ pizza.getType();
 		byte data[] = phrase.getBytes();
 		String chemin = p.toFile().getAbsolutePath() +"/" + pizza.getCode() +".txt";
 		Path cheminValide = Paths.get(chemin);

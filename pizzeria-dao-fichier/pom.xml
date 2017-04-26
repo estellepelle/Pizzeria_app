@@ -20,12 +20,10 @@
 		 <dependency>
 			<groupId>Pizzeria-dao-api</groupId>
 			<artifactId>Pizzeria-dao-api</artifactId>
-			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>Pizzeria-domain</groupId>
 			<artifactId>Pizzeria-domain</artifactId>
-			<version>1.0.1</version>
 		</dependency> 
 	</dependencies>
 	

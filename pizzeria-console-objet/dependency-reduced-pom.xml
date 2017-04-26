@@ -8,7 +8,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>Pizzeria-console</groupId>
   <artifactId>Pizzeria-console</artifactId>
-  <version>1.0.1</version>
   <build>
     <finalName>pizzeria_app_compile_${project.version}</finalName>
     <plugins>
@@ -36,6 +35,48 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <dependencies>
+        <dependency>
+          <groupId>Pizzeria-memoire</groupId>
+          <artifactId>Pizzeria-memoire</artifactId>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <dao>fr.pizzeria.dao.DaoMemoireFactory</dao>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <dependencies>
+        <dependency>
+          <groupId>Pizzeria-fichier</groupId>
+          <artifactId>Pizzeria-fichier</artifactId>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <dao>fr.pizzeria.dao.DaoFichierFactory</dao>
+      </properties>
+    </profile>
+    <profile>
+      <id>jdbc</id>
+      <dependencies>
+        <dependency>
+          <groupId>Pizzeria-dao-jdbc</groupId>
+          <artifactId>Pizzeria-dao-jdbc</artifactId>
+          <version>1.0.1</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <dao>fr.pizzeria.dao.JdbcFactory</dao>
+      </properties>
+    </profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

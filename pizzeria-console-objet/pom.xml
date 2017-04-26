@@ -11,13 +11,12 @@
 
 	<groupId>Pizzeria-console</groupId>
 	<artifactId>Pizzeria-console</artifactId>
-	<version>1.0.1</version>
 	
 	<profiles>
 		<profile>
 			<id>dev</id>
 			<activation>
-				 <activeByDefault>true</activeByDefault>
+				 <activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<dao>fr.pizzeria.dao.DaoMemoireFactory</dao>
@@ -38,12 +37,29 @@
 			 	<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-			<dao>fr.pizzeria.dao.FichierFactory</dao>
+			<dao>fr.pizzeria.dao.DaoFichierFactory</dao>
 			</properties>
 			<dependencies>
 				<dependency>
 					<groupId>Pizzeria-fichier</groupId>
 					<artifactId>Pizzeria-fichier</artifactId>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+		
+		<profile>
+			<id>jdbc</id>
+			<activation>
+			 	<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+			<dao>fr.pizzeria.dao.JdbcFactory</dao>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>Pizzeria-dao-jdbc</groupId>
+					<artifactId>Pizzeria-dao-jdbc</artifactId>
 					<scope>runtime</scope>
 				</dependency>
 			</dependencies>
@@ -99,14 +115,14 @@
 				<groupId>Pizzeria-dao-api</groupId>
 				<artifactId>Pizzeria-dao-api</artifactId>
 			</dependency>
-			<dependency>
+			<!-- <dependency>
 				<groupId>Pizzeria-fichier</groupId>
 				<artifactId>Pizzeria-fichier</artifactId>
 			</dependency>
 			<dependency>
 				<groupId>Pizzeria-memoire</groupId>
 				<artifactId>Pizzeria-memoire</artifactId>
-			</dependency>
+			</dependency> -->
 			<dependency>
 				<groupId>com.github.lalyos</groupId>
 				<artifactId>jfiglet</artifactId>

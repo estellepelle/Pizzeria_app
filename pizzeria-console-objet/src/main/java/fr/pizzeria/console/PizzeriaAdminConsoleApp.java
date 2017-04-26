@@ -1,29 +1,25 @@
 package fr.pizzeria.console;
 
-import fr.pizzeria.model.CategoriePizza;
-import fr.pizzeria.model.Pizza;
-
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-
 import com.github.lalyos.jfiglet.FigletFont;
 
 import fr.pizzeria.dao.DaoFactory;
-import fr.pizzeria.dao.DaoFichierFactory;
-import fr.pizzeria.dao.DaoMemoireFactory;
-import fr.pizzeria.dao.pizza.IPizzaDao;
-import fr.pizzeria.dao.pizza.PizzaDaoImpl;
-import fr.pizzeria.ihm.*;
+
+import fr.pizzeria.ihm.Menu;
+import fr.pizzeria.model.Pizza;
+
 
 public class PizzeriaAdminConsoleApp {
 
-	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 		
-		ResourceBundle bundle = ResourceBundle.getBundle("application");
+	    ResourceBundle bundle = ResourceBundle.getBundle("application");
 		String value = bundle.getString("dao.impl");
 		
 		System.out.println(value);
@@ -31,7 +27,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		//daoFactory
 		DaoFactory  daoFactory =  (DaoFactory) maClasse.newInstance();
-		
+		;
 		
 		// TODO Auto-generated method stub
 		Scanner question = new Scanner(System.in);
@@ -80,7 +76,6 @@ public class PizzeriaAdminConsoleApp {
 			case 4:
 				unMenu.getListPizza().execute();
 				unMenu.getSuppPizza().execute();
-				break;
 			default:
 				break;
 			}
@@ -90,14 +85,14 @@ public class PizzeriaAdminConsoleApp {
 	}
 
 	private static void initialisationPizzas(List<Pizza> pizzas) {
-		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "PEP", "Peperoni", 12.50, CategoriePizza.VIANDE));
+		/*pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "PEP", "Peperoni", 12.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "MAR", "Margherita", 14.00, CategoriePizza.SANS_VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "REI", "La Reine", 11.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "FRO", "La 4 fromages", 12.00, CategoriePizza.SANS_VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "CAN", "La cannibale", 12.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "ORI", "L'orientale", 13.50, CategoriePizza.VIANDE));
-		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "IND", "L'indienne", 14.00, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "IND", "L'indienne", 14.00, CategoriePizza.VIANDE));*/
 	}
 
 }

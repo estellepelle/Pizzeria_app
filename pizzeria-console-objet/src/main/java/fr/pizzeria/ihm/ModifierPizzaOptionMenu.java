@@ -1,9 +1,9 @@
 package fr.pizzeria.ihm;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import fr.pizzeria.dao.pizza.IPizzaDao;
-import fr.pizzeria.dao.pizza.PizzaDaoImpl;
 import fr.pizzeria.exception.UpdatePizzaException;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
@@ -19,7 +19,7 @@ public class ModifierPizzaOptionMenu extends OptionMenu{
 		this.libelle="3. Mettre à jour une pizza";
 	}
 	
-	public boolean execute()  {
+	public boolean execute() throws SQLException  {
 		System.out.println("Veuillez choisir la pizza à modifier:");
 		String codeAModifier = question.next();
 		
@@ -33,7 +33,7 @@ public class ModifierPizzaOptionMenu extends OptionMenu{
 		String type= question.next();
 		CategoriePizza leType = CategoriePizza.valueOf(type);
 		
-		Pizza pizza = new Pizza(0, code,libelle,prix, leType);
+		Pizza pizza = new Pizza(code,libelle,prix, leType);
 		
 		try {
 			laPizzaDao.updatePizza(codeAModifier, pizza) ;
