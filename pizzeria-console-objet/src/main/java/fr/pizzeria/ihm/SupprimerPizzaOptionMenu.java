@@ -19,7 +19,7 @@ public class SupprimerPizzaOptionMenu extends OptionMenu{
 	}
 	
 	public boolean execute() {
-		System.out.println("Veuillez choisir la pizza � supprimer:");
+		System.out.println("Veuillez choisir la pizza à supprimer:");
 		String codeASupprimer = question.next();
 		
 		try {

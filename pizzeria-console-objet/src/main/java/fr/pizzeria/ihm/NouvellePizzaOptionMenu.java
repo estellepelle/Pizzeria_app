@@ -22,7 +22,7 @@ public class NouvellePizzaOptionMenu extends OptionMenu {
 	public boolean execute() {
 		System.out.println("Veuillez saisir un code:");
 		String code = question.next();
-		System.out.println("Veuillez saisir un libell�:");
+		System.out.println("Veuillez saisir un libelle:");
 		String libelle = question.next();
 		System.out.println("Veuillez saisir un prix:");
 		double prix = question.nextDouble();

@@ -65,7 +65,7 @@ public class PizzeriaAdminConsoleApp {
 			// Poser une question
 			choixMenu = question.nextInt();
 
-			// Analyse de la r�ponse � la question
+			// Analyse de la reponse à la question
 			switch (choixMenu) {
 			case 1:
 				unMenu.getListPizza().execute();
@@ -90,14 +90,14 @@ public class PizzeriaAdminConsoleApp {
 	}
 
 	private static void initialisationPizzas(List<Pizza> pizzas) {
-		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "PEP", "P�p�roni", 12.50, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "PEP", "Peperoni", 12.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "MAR", "Margherita", 14.00, CategoriePizza.SANS_VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "REI", "La Reine", 11.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "FRO", "La 4 fromages", 12.00, CategoriePizza.SANS_VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "CAN", "La cannibale", 12.50, CategoriePizza.VIANDE));
 		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
-		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "ORI", "L�orientale", 13.50, CategoriePizza.VIANDE));
-		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "IND", "L�indienne", 14.00, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "ORI", "L'orientale", 13.50, CategoriePizza.VIANDE));
+		pizzas.add(new Pizza(PizzaDaoImpl.codePizza++, "IND", "L'indienne", 14.00, CategoriePizza.VIANDE));
 	}
 
 }

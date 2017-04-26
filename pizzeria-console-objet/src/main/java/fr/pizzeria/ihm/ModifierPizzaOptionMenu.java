@@ -16,16 +16,16 @@ public class ModifierPizzaOptionMenu extends OptionMenu{
 	public ModifierPizzaOptionMenu(Scanner question,IPizzaDao laPizzaDao){
 		this.question=question;
 		this.laPizzaDao = laPizzaDao;
-		this.libelle="3. Mettre � jour une pizza";
+		this.libelle="3. Mettre à jour une pizza";
 	}
 	
 	public boolean execute()  {
-		System.out.println("Veuillez choisir la pizza � modifier:");
+		System.out.println("Veuillez choisir la pizza à modifier:");
 		String codeAModifier = question.next();
 		
 		System.out.println("Veuillez saisir un code:");
 		String code = question.next();
-		System.out.println("Veuillez saisir un libell�:");
+		System.out.println("Veuillez saisir un libelle:");
 		String libelle = question.next();
 		System.out.println("Veuillez saisir un prix:");
 		double prix = question.nextDouble();
