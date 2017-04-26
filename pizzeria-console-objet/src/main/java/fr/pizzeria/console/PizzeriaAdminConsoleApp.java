@@ -6,6 +6,7 @@ import fr.pizzeria.model.Pizza;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 
@@ -20,24 +21,27 @@ import fr.pizzeria.ihm.*;
 
 public class PizzeriaAdminConsoleApp {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+		
+		ResourceBundle bundle = ResourceBundle.getBundle("application");
+		String value = bundle.getString("dao.impl");
+		
+		System.out.println(value);
+		Class<?> maClasse = Class.forName(value);
+		
+		//daoFactory
+		DaoFactory  daoFactory =  (DaoFactory) maClasse.newInstance();
+		
+		
 		// TODO Auto-generated method stub
 		Scanner question = new Scanner(System.in);
 		List<Pizza> pizzas = new ArrayList<Pizza>();
 		
-		//IPizzaDao laPizzaDao = new PizzaDaoImpl(pizzas);
-		
-		//daoFactoryFichier
-		DaoFactory  daoFactory = new DaoFichierFactory();
-		
-		//daoMemoireFactory
-		//DaoFactory  daoMemoire = new DaoMemoireFactory(pizzas);
-		
 		
 		String asciiArt;
 	
-			asciiArt = FigletFont.convertOneLine("Pizzeria-app");
-			System.out.println(asciiArt);
+		asciiArt = FigletFont.convertOneLine("Pizzeria-app");
+		System.out.println(asciiArt);
 	
 	    
 		

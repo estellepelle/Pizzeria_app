@@ -12,8 +12,10 @@ public class DaoMemoireFactory implements DaoFactory {
 //	private List<Pizza> pizzas = new ArrayList<Pizza>();
 	private IPizzaDao pizzaDao; 
 	
-	public DaoMemoireFactory(List<Pizza> pizzas) {
-		this.pizzaDao =new PizzaDaoImpl(pizzas);
+	
+	
+	public DaoMemoireFactory() {
+		this.pizzaDao =new PizzaDaoImpl();
 	
 	}
 	

@@ -1,9 +1,11 @@
 package fr.pizzeria.dao.pizza;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.pizzeria.exception.DeletePizzaException;
 import fr.pizzeria.exception.UpdatePizzaException;
+import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
 public class PizzaDaoImpl implements IPizzaDao{
@@ -11,6 +13,18 @@ public class PizzaDaoImpl implements IPizzaDao{
 	private List<Pizza> pizzas;
 	public static int codePizza = 0;
 
+	
+	public PizzaDaoImpl(){
+		pizzas = new ArrayList<>();
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "PEP", "P�p�roni", 12.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "MAR", "Margherita", 14.00, CategoriePizza.SANS_VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "REI", "La Reine", 11.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "FRO", "La 4 fromages", 12.00, CategoriePizza.SANS_VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "CAN", "La cannibale", 12.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "ORI", "L�orientale", 13.50, CategoriePizza.VIANDE));
+		saveNewPizza(new Pizza(PizzaDaoImpl.codePizza++, "IND", "L�indienne", 14.00, CategoriePizza.VIANDE));
+	}
 	
 	public PizzaDaoImpl(List<Pizza> pizzas){
 		this.pizzas = pizzas;

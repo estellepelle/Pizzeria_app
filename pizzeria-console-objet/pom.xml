@@ -13,6 +13,43 @@
 	<artifactId>Pizzeria-console</artifactId>
 	<version>1.0.1</version>
 	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				 <activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<dao>fr.pizzeria.dao.DaoMemoireFactory</dao>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>Pizzeria-memoire</groupId>
+					<artifactId>Pizzeria-memoire</artifactId>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+			
+		</profile>
+		
+		<profile>
+			<id>prod</id>
+			<activation>
+			 	<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+			<dao>fr.pizzeria.dao.FichierFactory</dao>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>Pizzeria-fichier</groupId>
+					<artifactId>Pizzeria-fichier</artifactId>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+	 
 	<build>
 		<plugins>
 			<plugin>
@@ -42,6 +79,8 @@
 				</plugin>
 		</plugins>
 		<finalName>pizzeria_app_compile_${project.version}</finalName>
+		
+		
 	</build>
 
 	
