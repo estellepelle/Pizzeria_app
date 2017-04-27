@@ -1,1 +1,1 @@
-0;maroil;15.0;SANS_VIANDE
+maroil;15.0;SANS_VIANDE

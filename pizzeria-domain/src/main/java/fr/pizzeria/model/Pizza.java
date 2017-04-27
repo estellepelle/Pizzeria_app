@@ -1,16 +1,44 @@
 package fr.pizzeria.model;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="pizzas")
 public class Pizza {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	
 	@ToString
+	@Column(name = "code")
 	private String code;
+	
 	@ToString
+	@Column(name = "nom")
 	private String nom;
+	
 	@ToString
+	@Column(name = "prix")
 	private double prix;
+	
 	@ToString
+	@Enumerated(EnumType.STRING)
+	@Column(name = "type")
 	CategoriePizza type;
+	
+	public Pizza() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Pizza( String code, String nom, double prix, CategoriePizza type) {
 		

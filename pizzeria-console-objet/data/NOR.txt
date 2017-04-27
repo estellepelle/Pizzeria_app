@@ -1,1 +1,1 @@
-8;norvegienne;12.0;POISSON
+norvegienne;12.0;POISSON

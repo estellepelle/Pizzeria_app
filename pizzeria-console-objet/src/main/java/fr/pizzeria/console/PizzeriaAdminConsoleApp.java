@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import com.github.lalyos.jfiglet.FigletFont;
 
@@ -18,6 +23,11 @@ import fr.pizzeria.model.Pizza;
 public class PizzeriaAdminConsoleApp {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
+		
+		java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.SEVERE);
+
+		// Persistence.createEntityManagerFactory("pizzeria-unit");
+		 
 		
 	    ResourceBundle bundle = ResourceBundle.getBundle("application");
 		String value = bundle.getString("dao.impl");
@@ -76,6 +86,8 @@ public class PizzeriaAdminConsoleApp {
 			case 4:
 				unMenu.getListPizza().execute();
 				unMenu.getSuppPizza().execute();
+			case 5 :
+				unMenu.getImportDonnes().execute();
 			default:
 				break;
 			}

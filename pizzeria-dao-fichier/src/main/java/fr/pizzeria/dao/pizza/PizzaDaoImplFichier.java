@@ -46,7 +46,7 @@ public class PizzaDaoImplFichier implements IPizzaDao {
 					                         
 							
 					
-					return  new Pizza(code, valueTab[1],Double.valueOf(valueTab[2]), CategoriePizza.valueOf(valueTab[3]));
+					return  new Pizza(code, valueTab[0],Double.valueOf(valueTab[1]), CategoriePizza.valueOf(valueTab[2]));
 				}
 				catch(IOException e){
 				   throw new StockageException(e);	

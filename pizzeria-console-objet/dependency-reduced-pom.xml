@@ -68,12 +68,25 @@
         <dependency>
           <groupId>Pizzeria-dao-jdbc</groupId>
           <artifactId>Pizzeria-dao-jdbc</artifactId>
-          <version>1.0.1</version>
           <scope>runtime</scope>
         </dependency>
       </dependencies>
       <properties>
         <dao>fr.pizzeria.dao.JdbcFactory</dao>
+      </properties>
+    </profile>
+    <profile>
+      <id>jpa</id>
+      <dependencies>
+        <dependency>
+          <groupId>Pizzeria-dao-jpa</groupId>
+          <artifactId>Pizzeria-dao-jpa</artifactId>
+          <version>1.0.1</version>
+          <scope>runtime</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <dao>fr.pizzeria.dao.JpaFactory</dao>
       </properties>
     </profile>
   </profiles>

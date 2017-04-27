@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>dta</groupId>
 		<artifactId>Pizzeria-app-parent</artifactId>
@@ -11,12 +11,12 @@
 
 	<groupId>Pizzeria-console</groupId>
 	<artifactId>Pizzeria-console</artifactId>
-	
+
 	<profiles>
 		<profile>
 			<id>dev</id>
 			<activation>
-				 <activeByDefault>false</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<dao>fr.pizzeria.dao.DaoMemoireFactory</dao>
@@ -28,16 +28,16 @@
 					<scope>runtime</scope>
 				</dependency>
 			</dependencies>
-			
+
 		</profile>
-		
+
 		<profile>
 			<id>prod</id>
 			<activation>
-			 	<activeByDefault>false</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-			<dao>fr.pizzeria.dao.DaoFichierFactory</dao>
+				<dao>fr.pizzeria.dao.DaoFichierFactory</dao>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -47,14 +47,14 @@
 				</dependency>
 			</dependencies>
 		</profile>
-		
+
 		<profile>
 			<id>jdbc</id>
 			<activation>
-			 	<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-			<dao>fr.pizzeria.dao.JdbcFactory</dao>
+				<dao>fr.pizzeria.dao.JdbcFactory</dao>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -64,75 +64,98 @@
 				</dependency>
 			</dependencies>
 		</profile>
+
+		<profile>
+			<id>jpa</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<dao>fr.pizzeria.dao.JpaFactory</dao>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>Pizzeria-dao-jpa</groupId>
+					<artifactId>Pizzeria-dao-jpa</artifactId>
+					<scope>runtime</scope>
+				</dependency>
+			</dependencies>
+		</profile>
 	</profiles>
-	 
+
 	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>3.0.0</version>
-				 <executions>
-         			 <execution>
-           				 <goals>
-             				 <goal>shade</goal>
-           				 </goals>
-           
-          			</execution>
-        		</executions>
-			</plugin>
-			
-			<plugin>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.0.2</version>
-					<configuration>
-						<archive>
-							<manifest>
-								<mainClass>fr.pizzeria.console.PizzeriaAdminConsoleApp</mainClass>
-							</manifest>
+				<executions>
+					<execution>
+						<goals>
+							<goal>shade</goal>
+						</goals>
 
-						</archive>
-					</configuration>
-				</plugin>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>fr.pizzeria.console.PizzeriaAdminConsoleApp</mainClass>
+						</manifest>
+
+					</archive>
+				</configuration>
+			</plugin>
 		</plugins>
 		<finalName>pizzeria_app_compile_${project.version}</finalName>
-		
-		
+
+
 	</build>
 
-	
-	
 
-		<dependencies>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>Pizzeria-domain</groupId>
-				<artifactId>Pizzeria-domain</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>Pizzeria-dao-api</groupId>
-				<artifactId>Pizzeria-dao-api</artifactId>
-			</dependency>
-			<!-- <dependency>
-				<groupId>Pizzeria-fichier</groupId>
-				<artifactId>Pizzeria-fichier</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>Pizzeria-memoire</groupId>
-				<artifactId>Pizzeria-memoire</artifactId>
-			</dependency> -->
-			<dependency>
-				<groupId>com.github.lalyos</groupId>
-				<artifactId>jfiglet</artifactId>
-				<version>0.0.3</version>
-			</dependency>
-			<dependency>
-   				 <groupId>mysql</groupId>
-   				 <artifactId>mysql-connector-java</artifactId>
-   				 <version>5.1.41</version>
-			</dependency>
-		</dependencies>
-	
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>Pizzeria-domain</groupId>
+			<artifactId>Pizzeria-domain</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>Pizzeria-dao-api</groupId>
+			<artifactId>Pizzeria-dao-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.lalyos</groupId>
+			<artifactId>jfiglet</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.41</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>Pizzeria-fichier</groupId>
+			<artifactId>Pizzeria-fichier</artifactId>
+		</dependency>
+	</dependencies>
+
 </project>
