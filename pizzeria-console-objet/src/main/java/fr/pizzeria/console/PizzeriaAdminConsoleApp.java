@@ -26,7 +26,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.SEVERE);
 
-		// Persistence.createEntityManagerFactory("pizzeria-unit");
+		//Persistence.createEntityManagerFactory("pizzeria-unit");
 		 
 		
 	    ResourceBundle bundle = ResourceBundle.getBundle("application");
@@ -37,7 +37,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		//daoFactory
 		DaoFactory  daoFactory =  (DaoFactory) maClasse.newInstance();
-		;
+		
 		
 		// TODO Auto-generated method stub
 		Scanner question = new Scanner(System.in);

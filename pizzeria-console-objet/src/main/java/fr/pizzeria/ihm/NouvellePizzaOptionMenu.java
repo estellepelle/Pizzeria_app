@@ -33,6 +33,7 @@ public class NouvellePizzaOptionMenu extends OptionMenu {
 		
 		Pizza pizza = new Pizza(code,libelle,prix,leType);
 		laPizzaDao.saveNewPizza(pizza);
+	
 		
 		return true;
 	}

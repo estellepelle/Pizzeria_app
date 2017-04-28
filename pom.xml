@@ -16,6 +16,7 @@
 		<module>pizzeria-domain</module>
 		<module>pizzeria-dao-jdbc</module>
 		<module>pizzeria-dao-jpa</module>
+		<module>pizzeria-console-client</module>
 	</modules>
 
 	<build>
@@ -88,6 +89,16 @@
 			<dependency>
 				<groupId>Pizzeria-dao-jpa</groupId>
 				<artifactId>Pizzeria-dao-jpa</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-console-client</groupId>
+				<artifactId>Pizzeria-console-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>Pizzeria-console</groupId>
+				<artifactId>Pizzeria-console</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
